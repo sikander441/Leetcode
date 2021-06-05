@@ -39,7 +39,7 @@ public class MaximumAreaOfCakeTest {
         int arr1[]={1};
         int arr2[]={3,1};
         int h=5;int w=4;
-        int result = solution.maxArea(h,w,arr1,arr2);
+        int result = solution.maxArea(h,w,arr2,arr1);
         Assert.assertEquals(6,result);
     }
 
