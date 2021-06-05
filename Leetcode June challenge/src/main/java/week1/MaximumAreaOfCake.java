@@ -6,21 +6,6 @@ import java.util.Arrays;
 public class MaximumAreaOfCake {
 
    // Reference:  https://www.geeksforgeeks.org/multiply-large-integers-under-large-modulo/
-     int moduloMultiplication(int a, int b, int mod)
-    {
-        int res = 0;
-        a %= mod;
-        while (b > 0)
-        {
-            if ((b & 1) > 0)
-            {
-                res = (res + a) % mod;
-            }
-            a = (2 * a) % mod;
-            b >>= 1;
-        }
-        return res;
-    }
 
     public int maxConsecutiveInArray(int[] arr,int w){
         int res = 0;
@@ -40,6 +25,7 @@ public class MaximumAreaOfCake {
         int modulo = 1000000000+7;
         int hMax = maxConsecutiveInArray(horizontalCuts,h);
         int vMax = maxConsecutiveInArray(verticalCuts,w);
-        return moduloMultiplication(hMax,vMax,modulo);
+
+        return (hMax%modulo%modulo * vMax%modulo)%modulo;
     }
 }
