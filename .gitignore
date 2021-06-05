@@ -2,3 +2,5 @@
 out/
 *.iml
 .idea/
+gradle/
+.gradle/
